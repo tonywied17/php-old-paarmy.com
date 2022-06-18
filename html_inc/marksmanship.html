@@ -1,0 +1,82 @@
+<div class="content-left">
+
+
+
+    <h3>Next Marksmanship Test:</h3> <span id="nextTest"></span>
+
+    <div class="line2"></div>
+
+    <h3>Markmanship Test Rules</h3>
+    <p style="text-indent: 1em;">You may participate in the marksmanship test with one of four eligible rifles listed below. To obtain a gold medal or above you must have a bayonet equipped to your rifle.
+
+        <h4>Rifles:</h4>
+        <ul>
+            <li class="list">Springfield M1861</li>
+            <li class="list">Enfield M1853</li>
+            <li class="list">Lorenz M1854</li>
+            <li class="list">Mississippi 1841</li>
+        </ul>
+
+    </p>
+
+
+    <h3>Official Scoring &amp; Medals</h3>
+
+    <h4>Target 1 (40 Yards)</h4>
+    <ul>
+        <li class="list">Each soldier will get <i style="color:#761912;">7 shots</i> on the 40 yard target.
+            <li class="list">For each outer-circle hit on the 40 yard target, you will be awarded 0 points,
+                <li class="list">for each inner-circle hit 2 points
+                    <li class="list">for each bulls-eye you will get 5 points.
+    </ul>
+
+    <h4>Target 2 (70 Yards)</h4>
+
+    <ul>
+        <li class="list">Each soldier will get <i style="color:#761912;">6 shots</i> on the 70 yard target.
+            <li class="list">For each hit on the outer-circle you will get 3 points
+                <li class="list">for each hit on the inner circle you will get 5 points
+                    <li class="list">for each bulls-eye hit you will get 7 points.
+    </ul>
+
+
+    <h4>Target 3 (125 Yards)</h4>
+    <ul>
+        <li class="list">Each soldier will get <i style="color:#761912;">5 shots</i> on the 125 yard targets.
+            <li class="list">For each hit on the board you are awarded 3 points
+                <li class="list">for each outer-circle hit is 5 points, each inner-circle hit is 7
+                    <li class="list">For each bulls-eye hit is 10 points.
+    </ul>
+
+    <h4>Medals</h4>
+    <ul style="list-style-type: none;">
+        <li class="list">Platinum: 80 Points<sup><small>*</small></sup></li>
+        <li class="list">Gold: 60 Points<sup><small>*</small></sup></li>
+        <li class="list">Silver: 50 Points</li>
+        <li class="list">Bronze: 30 Points</li>
+    </ul>
+    <small>* - Bayonet Required</small>
+    <script>
+        var d = new Date();
+        d.setDate(d.getDate() + (6 + 7 - d.getDay()) % 7);
+
+        if (d.getDay() == 6 && d.getHours() > 19 && d.getMinutes() > 30) {
+            d.setDate(d.getDate() + (6 + 7 - d.getDay()));
+        }
+
+        var options = {
+            'weekday': 'long',
+            'month': 'long',
+            'day': '2-digit',
+            'year': 'numeric'
+        };
+        var date = d.toLocaleString('en-US', options);
+
+        document.getElementById("nextTest").innerHTML = `
+                    <ul style="color:#761912; list-style-type: none;">
+                    <li class="list">${date}
+                    <li class="list">2:00PM EST <sup>[NA]</sup>
+                    <li class="list">6:00PM GMT <sup>[EU]</sup> 
+                    </ul>`;
+    </script>
+</div>

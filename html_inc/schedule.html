@@ -1,0 +1,32 @@
+<div class="content-left">
+    <h2>Muster Times</h2>
+
+    <div class="row1">
+        <div class="column1">
+
+            <h3>EU Schedule</h3>
+
+            <p>
+                <div id="euSchedule">Loading...</div>
+                <script>
+                    $(document).ready(function() {
+                        $("#euSchedule").load("lib/schedule.php?tz=euSchedule");
+                    });
+                </script>
+            </p>
+        </div>
+        <div class="column1">
+            <h3>NA Schedule</h3>
+            <p>
+                <div id="usSchedule">Loading...</div>
+
+                <script>
+                    $(document).ready(function() {
+                        $("#usSchedule").load("lib/schedule.php?tz=usSchedule");
+                    });
+                </script>
+            </p>
+        </div>
+
+    </div>
+</div>
